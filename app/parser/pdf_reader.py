@@ -29,3 +29,28 @@ def extract_text(document):
         })
 
     return extracted_text
+def extract_blocks(document):
+    """
+    Extract text blocks from each page while preserving layout information.
+    """
+    pages = []
+
+    for page_number in range(document.page_count):
+        page = document.load_page(page_number)
+
+        blocks = page.get_text("blocks")
+
+        page_blocks = []
+
+        for block in blocks:
+            page_blocks.append({
+                "text": block[4].strip(),
+                "bbox": block[:4]
+            })
+
+        pages.append({
+            "page": page_number + 1,
+            "blocks": page_blocks
+        })
+
+    return pages

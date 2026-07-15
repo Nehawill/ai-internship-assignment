@@ -54,3 +54,12 @@ def extract_blocks(document):
         })
 
     return pages
+import re
+
+
+def is_heading(text: str) -> bool:
+    
+
+    pattern = r"^\d+(\.\d+)*\.?\s+.+"
+
+    return bool(re.match(pattern, text.strip()))

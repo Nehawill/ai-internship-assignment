@@ -1,14 +1,21 @@
-from app.parser.pdf_reader import open_pdf, extract_blocks
+from app.parser.pdf_reader import (
+    open_pdf,
+    extract_blocks,
+    is_heading
+)
 
 pdf = open_pdf("data/ct200_manual.pdf")
 
-if pdf:
-    pages = extract_blocks(pdf)
+pages = extract_blocks(pdf)
 
-    first_page = pages[0]
+print("\nPage 1\n")
 
-    print(f"Page {first_page['page']}")
+for block in pages[0]["blocks"]:
 
-    for block in first_page["blocks"]:
-        print("=" * 50)
-        print(block["text"])
+    if not block["text"]:
+        continue
+
+    if is_heading(block["text"]):
+        print(f"HEADING  : {block['text']}")
+    else:
+        print(f"TEXT     : {block['text'][:60]}")

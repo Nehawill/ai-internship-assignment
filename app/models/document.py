@@ -7,7 +7,13 @@ class DocumentSection(Base):
     __tablename__ = "document_sections"
 
     id = Column(Integer, primary_key=True, index=True)
+
+    version = Column(String, nullable=False)
+
     title = Column(String, nullable=False)
+
     level = Column(Integer, nullable=False)
+
     page = Column(Integer, nullable=False)
+
     content = Column(Text, nullable=False)

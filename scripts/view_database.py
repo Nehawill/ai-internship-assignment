@@ -10,6 +10,7 @@ print(f"Total Sections: {len(sections)}\n")
 for section in sections:
     print("=" * 60)
     print(f"ID    : {section.id}")
+    print(f"Version : {section.version}")
     print(f"Title : {section.title}")
     print(f"Level : {section.level}")
     print(f"Page  : {section.page}")

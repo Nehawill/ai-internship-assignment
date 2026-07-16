@@ -9,6 +9,6 @@ pdf = open_pdf("data/ct200_manual.pdf")
 
 sections = build_sections(pdf)
 
-save_sections(sections)
+save_sections(sections,version="v1")
 
 print("Document stored successfully!")

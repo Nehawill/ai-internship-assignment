@@ -2,10 +2,8 @@ from app.database import SessionLocal
 from app.models.document import DocumentSection
 
 
-def save_sections(sections):
-    """
-    Save parsed document sections into the database.
-    """
+def save_sections(sections,version):
+    
 
     db = SessionLocal()
 
@@ -14,6 +12,7 @@ def save_sections(sections):
         for section in sections:
 
             document = DocumentSection(
+                version=version,
                 title=section["title"],
                 level=section["level"],
                 page=section["page"],

@@ -8,6 +8,7 @@ def save_sections(sections,version):
     db = SessionLocal()
 
     try:
+        
 
         for section in sections:
 

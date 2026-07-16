@@ -1,3 +1,5 @@
+import sys
+
 from app.parser.pdf_reader import (
     open_pdf,
     build_sections,
@@ -5,10 +7,18 @@ from app.parser.pdf_reader import (
 
 from app.services.document_service import save_sections
 
-pdf = open_pdf("data/ct200_manual.pdf")
+if len(sys.argv) != 3:
+    print("Usage:")
+    print("python -m scripts.load_pdf <pdf_path> <version>")
+    sys.exit()
+
+pdf_path = sys.argv[1]
+version = sys.argv[2]
+
+pdf = open_pdf(pdf_path)
 
 sections = build_sections(pdf)
 
-save_sections(sections,version="v1")
+save_sections(sections, version)
 
-print("Document stored successfully!")
+print(f"{version} stored successfully!")

@@ -219,9 +219,9 @@ This separation improves maintainability, readability, and future extensibility.
 | Version Comparison | ✅ Complete |
 | FastAPI APIs | ✅ Complete |
 | Initial LLM Connectivity | ✅ Complete |
-| Structured Output Validation | 🚧 In Progress |
-| AI Test Case Generation | 🚧 In Progress |
-| Stale Test Detection | 🚧 In Progress |
+| Structured Output Validation |  In Progress |
+| AI Test Case Generation | In Progress |
+| Stale Test Detection | In Progress |
 
 ---
 
@@ -252,4 +252,5 @@ During this project I gained practical experience with:
 
 # Disclaimer
 
-This project was developed as part of the **Tri9T AI Internship Assignment**. Some advanced AI features are currently under development, while the implemented backend provides the core infrastructure required for document ingestion, version management, and comparison.
+The project is yet to be completed and it was done as internship project.
+
